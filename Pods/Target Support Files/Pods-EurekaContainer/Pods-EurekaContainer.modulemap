@@ -1,0 +1,6 @@
+framework module Pods_EurekaContainer {
+  umbrella header "Pods-EurekaContainer-umbrella.h"
+
+  export *
+  module * { export * }
+}

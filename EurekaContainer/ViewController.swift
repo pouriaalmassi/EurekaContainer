@@ -7,19 +7,35 @@
 //
 
 import UIKit
+import Eureka
 
-class ViewController: UIViewController {
+final class ViewController: FormViewController {
+    fileprivate enum ContainerType: String, CustomStringConvertible, Equatable {
+        case high, low
+        var description: String {
+            return self.rawValue
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        configureForm()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let selectedValue = form.values()["x"] as? ContainerType {
+            print(selectedValue)
+        }
     }
 
-
+    func configureForm() {
+        form
+            +++ PushRow<ContainerType>("x") {
+                $0.title = "High or low?"
+                $0.options = [.high, .low]
+                }.onPresent { (_, vc) in
+                    vc.enableDeselection = false
+        }
+    }
 }
-

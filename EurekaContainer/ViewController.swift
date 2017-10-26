@@ -50,14 +50,16 @@ final class ViewController: FormViewController {
         super.viewDidLoad()
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        
+
         containerContainerView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(containerContainerView)
+
+        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         
         let views: [String : Any] = ["containerContainerView" : containerContainerView, "tableView" : tableView]
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[tableView]|", options: [], metrics: nil, views: views))
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[containerContainerView]|", options: [], metrics: nil, views: views))
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[tableView(200)][containerContainerView]|", options: [], metrics: nil, views: views))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[tableView(150)][containerContainerView]|", options: [], metrics: nil, views: views))
         
         // Configure child viewcontrollers
         // ripped shamelessly from Matt Neub's Programming-iOS-Book-Examples
@@ -186,6 +188,70 @@ final class LowViewController: FormViewController {
             <<< StepperRow() {
                 $0.title = "StepperRow"
                 $0.value = 1.0
+            }
+
+            <<< SwitchRow() {
+                $0.title = "SwitchRow"
+                $0.value = true
+            }
+
+            <<< SliderRow() {
+                $0.title = "SliderRow"
+                $0.value = 5.0
+            }
+
+            <<< StepperRow() {
+                $0.title = "StepperRow"
+                $0.value = 1.0
+            }
+
+            <<< SwitchRow() {
+                $0.title = "SwitchRow"
+                $0.value = true
+            }
+
+            <<< SliderRow() {
+                $0.title = "SliderRow"
+                $0.value = 5.0
+            }
+
+            <<< StepperRow() {
+                $0.title = "StepperRow"
+                $0.value = 1.0
+            }
+
+
+            <<< SwitchRow() {
+                $0.title = "SwitchRow"
+                $0.value = true
+            }
+
+            <<< SliderRow() {
+                $0.title = "SliderRow"
+                $0.value = 5.0
+            }
+
+            <<< StepperRow() {
+                $0.title = "StepperRow"
+                $0.value = 1.0
+            }
+
+            <<< SwitchRow() {
+                $0.title = "SwitchRow"
+                $0.value = true
+            }
+
+            <<< SliderRow() {
+                $0.title = "SliderRow"
+                $0.value = 5.0
+            }
+
+            <<< StepperRow() {
+                $0.title = "StepperRow"
+                $0.value = 1.0
         }
+
+
+
     }
 }

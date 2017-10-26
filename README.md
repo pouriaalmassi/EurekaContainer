@@ -1,3 +1,3 @@
+Sample project of a Eureka FormViewController inside of a container view inside of a FormViewController.
 
-[![Demo video](https://raw.githubusercontent.com/pouriaalmassi/EurekaContainer/master/swap.mov)]
-
+![Screenshot](https://raw.githubusercontent.com/pouriaalmassi/EurekaContainer/master/swap.png)
